@@ -2,6 +2,7 @@ class Clean_Tweets:
     """
     The PEP8 Standard AMAZING!!!
     """
+    import pandas as pd;
     def __init__(self, df:pd.DataFrame):
         self.df = df
         print('Automation in Action...!!!')
@@ -42,10 +43,10 @@ class Clean_Tweets:
         favorite_count etc to numbers
         """
         df['polarity'] = pd.to_numeric(df['polarity'])
+        df['subjectivity'] = pd.to_numeric(df['subjectivity'])
+        df['retweet_count'] = pd.to_numeric(df['retweet_count'])
+        df['favorite_count'] = pd.to_numeric(df['favorite_count'])
 
-        
-        ----
-        ----
         
         return df
     
@@ -53,7 +54,10 @@ class Clean_Tweets:
         """
         remove non english tweets from lang
         """
+        import re
+        tolowerletter = df.lower()
+        df = re.sub("[^a-z0-9]"," ", tolowerletter)
+
         
-        df = ----
         
         return df
