@@ -35,33 +35,57 @@ class TweetDfExtractor:
 
     # an example function
     def find_statuses_count(self)->list:
-        statuses_count 
+        
+        statuses_countdf = pd.DataFrame(self.tweets_list["statuses_count"])
+
+        return  statuses_countdf 
         
     def find_full_text(self)->list:
-        text = 
-       
-    
-    def find_sentiments(self, text)->list:
         
-        return polarity, self.subjectivity
+        full_text = pd.DataFrame(self.tweets_list["full_text"])
+
+        return  full_textdf 
+       
+    def find_sentiments(self)->list:
+                
+            
+        polarity = pd.DataFrame(self.tweets_list["polarity"])
+        
+        subjectivity = pd.DataFrame(self.tweets_list["subjectivity"])
+
+        return polarity, subjectivity
 
     def find_created_time(self)->list:
        
+        created_at = pd.DataFrame(self.tweets_list["created_time"])
+
         return created_at
 
     def find_source(self)->list:
-        source = 
+       
+        source = pd.DataFrame(self.tweets_list["source"])
+
 
         return source
 
     def find_screen_name(self)->list:
-        screen_name = 
+        
+        screen_name = pd.DataFrame(self.tweets_list["screen_name"])
+        
+        return screen_name
+
 
     def find_followers_count(self)->list:
-        followers_count = 
+        
+        followers_count = pd.DataFrame(self.tweets_list["followers_count"])
+
+        return followers_count
 
     def find_friends_count(self)->list:
-        friends_count = 
+        
+        friends_count = pd.DataFrame(self.tweets_list["friends_count"])
+
+        return friends_count
 
     def is_sensitive(self)->list:
         try:
@@ -69,28 +93,40 @@ class TweetDfExtractor:
         except KeyError:
             is_sensitive = None
 
-        return is_sensitive
+        return pd.DataFrame(is_sensitive)
 
     def find_favourite_count(self)->list:
         
+        favourite_count = pd.DataFrame(self.tweets_list["favourite_count"])
+        
+        return favourite_count
+
     
     def find_retweet_count(self)->list:
-        retweet_count = 
+        
+        retweet_count = pd.DataFrame(self.tweets_list["retweet_count"])
+        
+        return retweet_count
 
     def find_hashtags(self)->list:
-        hashtags =
+         
+        hashtags = pd.DataFrame(self.tweets_list["hashtags"])
+        
+        return hashtags
 
     def find_mentions(self)->list:
-        mentions = 
-
+         
+        mentions = pd.DataFrame(self.tweets_list["mentions"])
+        
+        return mentions
 
     def find_location(self)->list:
         try:
-            location = self.tweets_list['user']['location']
+            location = self.tweets_list['location']
         except TypeError:
             location = ''
         
-        return location
+        return pd.DataFrame(location)
 
     
         
